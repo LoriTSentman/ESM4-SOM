@@ -72,7 +72,7 @@ make OPENMP=on
 
 ## Model inputs 
 
-Sample model input files are provided as a compressed tar file in input/. This includes datasets, namelists, diagnostics, field and data tables, etc.
+Sample model input files are provided as a compressed tar file in inputs/. This includes datasets, namelists, diagnostics, field and data tables, etc.
 Extract these inputs into $work/INPUT before running the model.
 
 
