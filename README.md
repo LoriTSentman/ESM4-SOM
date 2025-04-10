@@ -1,33 +1,24 @@
 # GFDL Earth System Model 4.1 Slab Ocean Configuration
 
 ## What Is Included
-* [src]((https://github.com/NOAA-GFDL/ESM4-SOM/tree/master/src) source code for the ESM4-SOM model (all code is in submodules)
-* [exec]((https://github.com/NOAA-GFDL/ESM4-SOM/tree/master/exec) Makefiles to compile the code 
-* [run]((https://github.com/NOAA-GFDL/ESM4-SOM/tree/master/run) Simple run script
+* [src]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/src) source code for the ESM4-SOM model (all code is in submodules)
+* [exec]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/exec) Makefiles to compile the code 
+* [run]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/run) Simple run script
 
 ## Cloning
 To clone the ESM4-SOM model please use the recursive option
 ```bash
-git clone --recursive git@github.com:NOAA-GFDL/ESM4-SOM.git 
+git clone --recursive git@github.com:LoriTSentman/ESM4-SOM.git 
 ```
 or 
 ```bash
-git clone --recursive https://github.com/NOAA-GFDL/ESM4-SOM.git
+git clone --recursive https://github.com/LoriTSentman/ESM4-SOM.git
 ```
 
 ## Compiling
 
-### Building the container
-The [container folder](container) provides example Dockerfiles and Signularity
-definition files to use to build AM4 containers using either GCC/GFORTAN or
-Intel oneAPI. There is a script that can be used to build the intel
-singularity containers, and the first step of this script can be used with the
-other GFDL climate models.
-
-
 ### Building from source
-This model was originally compiled and run with the intel16 compiler.
-It is recommended that you compile with an intel compiler.
+This model was initially compiled and run with the intel16 compiler.
 
 Compiling assumes that you have an intel compiler, MPI (impi, mpich,
 openmpi, etc), netcdf, and hdf5 in your LD_LIBRARY_PATH and LIBRARY_PATH.
@@ -35,12 +26,12 @@ It is also assumed that nf-config and nc-config are in your path.
 If you work on a machine with modules, you may need to load these 
 packages into your environment.
 
-Makefiles have been included in the 
-[exec/](https://github.com/NOAA-GFDL/ESM4-SOM/tree/master/exec) folder.
-There are several option for compiling, which can be found in the 
-[template/intel.mk](https://github.com/NOAA-GFDL/ESM4-SOM/blob/master/exec/templates/intel.mk).  
+Makefiles are included in the 
+[exec/](https://github.com/LoriTSentman/ESM4-SOM/tree/master/exec) folder.
+There are several options for compiling, which can be found in the 
+[template/intel.mk](https://github.com/LoriTSentman/ESM4-SOM/blob/master/exec/templates/intel.mk).  
 You may need to edit the template/intel.mk to update the compiler names
-or add any CPPDEF options specific for your system.
+or add any CPPDEF options specific to your system.
 The most common compile with optimizations on and with openmp would be 
 ```bash
 cd exec
@@ -72,7 +63,7 @@ Compiling on orion (MSU)
 ```bash
 module load intel impi netcdf hdf5
 export LIBRARY_PATH=${LIBRARY_PATH}:${LD_LIBRARY_PATH}
-git clone --recursive git@github.com:NOAA-GFDL/ESM4-SOM.git
+git clone --recursive git@github.com:LoriTSentman/ESM4-SOM.git
 cd ESM4-SOM/exec
 make OPENMP=on
 ```
@@ -80,7 +71,7 @@ make OPENMP=on
 ## Model inputs 
 
 Example model input files are provided as a tar file in input/ including datasets, namelists, diagnostics, field table, data table, etc.
-These files should be unpackaged and located in INPUT/ in the working directory when running the model. 
+These files should be extracted into an INPUT/ directory in your working directory when running the model. 
 
 
 ## Disclaimer
