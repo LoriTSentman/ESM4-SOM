@@ -1,9 +1,11 @@
 # GFDL Earth System Model 4.1 Slab Ocean Configuration
 
 ## What Is Included
-* [src]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/src) source code for the ESM4-SOM model (all code is in submodules)
-* [exec]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/exec) Makefiles to compile the code 
-* [run]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/run) Simple run script
+* [src]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/src) source code for the ESM4-SOM model (all code is in submodules)            
+* [exec]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/exec) Makefiles to compile the code                  
+* [run]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/run) Simple run script                
+* [inputs]((https://github.com/LoriTSentman/ESM4-SOM/tree/master/inputs) Model input files             
+
 
 ## Cloning
 To clone the ESM4-SOM model please use the recursive option
@@ -20,8 +22,8 @@ git clone --recursive https://github.com/LoriTSentman/ESM4-SOM.git
 ### Building from source
 This model was initially compiled and run with the intel16 compiler.
 
-Compiling assumes that you have an intel compiler, MPI (impi, mpich,
-openmpi, etc), netcdf, and hdf5 in your LD_LIBRARY_PATH and LIBRARY_PATH.
+Compiling assumes that you have an intel compiler, MPI (impi, MPICH,
+openMPI, etc), NetCDF, and HDF5 in your LD_LIBRARY_PATH and LIBRARY_PATH.
 It is also assumed that nf-config and nc-config are in your path. 
 If you work on a machine with modules, you may need to load these 
 packages into your environment.
@@ -32,7 +34,7 @@ There are several options for compiling, which can be found in the
 [template/intel.mk](https://github.com/LoriTSentman/ESM4-SOM/blob/master/exec/templates/intel.mk).  
 You may need to edit the template/intel.mk to update the compiler names
 or add any CPPDEF options specific to your system.
-The most common compile with optimizations on and with openmp would be 
+The most common compile with optimizations on and with openMP would be 
 ```bash
 cd exec
 make OPENMP=on
@@ -70,8 +72,8 @@ make OPENMP=on
 
 ## Model inputs 
 
-Example model input files are provided as a tar file in input/ including datasets, namelists, diagnostics, field table, data table, etc.
-These files should be extracted into an INPUT/ directory in your working directory when running the model. 
+Sample model input files are provided as a compressed tar file in input/. This includes datasets, namelists, diagnostics, field and data tables, etc.
+Extract these inputs into $work/INPUT before running the model.
 
 
 ## Disclaimer
